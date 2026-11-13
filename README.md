@@ -74,7 +74,7 @@ The agent drives the browser, records each step, and writes a replayable artifac
 **3b. Replay the discovered artifact for a different member (zero LLM calls)**
 
 ```bash
-python3 cli.py replay artifacts/member_lookup_balance.*.json \
+python3 cli.py replay evidence/discovery_run/artifact.json \
   --param member_id=10002 \
   --login artifacts/fixtures/login.json \
   --login-param username=operator \
@@ -86,7 +86,7 @@ Expected output:
 Replaying 'member.lookup_balance' ...
   Status:  SUCCESS
   savings_balance: $5,678.90
-  checking_balance: $3,456.78
+  checking_balance: $1,200.00
   LLM calls: 0
   Steps:   6/6
 ```
