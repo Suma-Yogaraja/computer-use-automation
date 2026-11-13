@@ -1,0 +1,40 @@
+{
+  "allowed_domains": ["localhost:8080"],
+  "allowed_routes": [
+    "/",
+    "/login",
+    "/dashboard",
+    "/member/search",
+    "/account",
+    "/account-frame",
+    "/interstitial",
+    "/supervisor/authorize"
+  ],
+  "blocked_routes": [],
+  "action": {
+    "irreversible_name_patterns": [
+      "submit transfer",
+      "confirm transfer",
+      "approve transfer",
+      "close account",
+      "delete account",
+      "approve transaction",
+      "confirm payment"
+    ],
+    "irreversible_route_patterns": [
+      "/transfer/submit",
+      "/transfer/confirm",
+      "/account/close",
+      "/account/delete",
+      "/payment/confirm"
+    ],
+    "known_dialog_patterns": [
+      "pending review"
+    ],
+    "sensitive_value_min_length": 4,
+    "max_recovery_attempts": 2,
+    "recovery_timeout_ms": 10000
+  },
+  "operator_lease_seconds": 300,
+  "session_restart_max_attempts": 1
+}

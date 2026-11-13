@@ -1,0 +1,306 @@
+{
+  "id": "member.lookup_balance",
+  "version": "1.0.0",
+  "name": "Member Balance Lookup",
+  "description": "Recorded by discovery agent on 2026-11-13",
+  "target": "http://localhost:8080/dashboard",
+  "compatibility": {
+    "vendor": "demo-bank",
+    "app_version": "1.0",
+    "surface": "web"
+  },
+  "parameters": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "required": true,
+      "pattern": "^\\d{5}$",
+      "sensitivity": "internal"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "string",
+      "sensitivity": "financial_data"
+    },
+    {
+      "name": "checking_balance",
+      "type": "string",
+      "sensitivity": "financial_data"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "step_01_navigate_dashboard",
+      "action": "navigate",
+      "locators": [],
+      "value": "http://localhost:8080/dashboard",
+      "expected_page": null,
+      "preconditions": [],
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/dashboard"
+        }
+      ],
+      "checkpoint": null,
+      "timeout_ms": 10000,
+      "retry_safe": true,
+      "risk_tier": "read",
+      "expected_method": null,
+      "expected_route": null,
+      "output_key": null
+    },
+    {
+      "step_id": "step_02_fill_member_id",
+      "action": "fill",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "textbox in 'Member ID:' row",
+          "role": "textbox",
+          "anchor": {
+            "target_role": "textbox",
+            "row_cell_text": "Member ID:",
+            "column_header": null,
+            "section_text": null
+          },
+          "surface": null,
+          "frame_path": [],
+          "scope": null,
+          "constraints": {
+            "visible": true,
+            "enabled": true,
+            "unique": true
+          }
+        }
+      ],
+      "value": "{{member_id}}",
+      "expected_page": {
+        "url_pattern": "*/dashboard*",
+        "landmark_text": "Member Search"
+      },
+      "preconditions": [],
+      "postconditions": [],
+      "checkpoint": null,
+      "timeout_ms": 10000,
+      "retry_safe": true,
+      "risk_tier": "read",
+      "expected_method": null,
+      "expected_route": null,
+      "output_key": null
+    },
+    {
+      "step_id": "step_03_click_search",
+      "action": "click",
+      "locators": [
+        {
+          "strategy": "aria_role_name",
+          "value": "Search",
+          "role": "button",
+          "anchor": null,
+          "surface": null,
+          "frame_path": null,
+          "scope": null,
+          "constraints": {
+            "visible": true,
+            "enabled": true,
+            "unique": true
+          }
+        }
+      ],
+      "value": null,
+      "expected_page": {
+        "url_pattern": "*/dashboard*",
+        "landmark_text": "Member Search"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/member/search"
+        }
+      ],
+      "checkpoint": null,
+      "timeout_ms": 15000,
+      "retry_safe": false,
+      "risk_tier": "mutating_expected",
+      "expected_method": "POST",
+      "expected_route": "/member/search",
+      "output_key": null
+    },
+    {
+      "step_id": "step_04_click_view_account_member_id_row",
+      "action": "click",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "link in '{{member_id}}' row",
+          "role": "link",
+          "anchor": {
+            "target_role": "link",
+            "row_cell_text": "{{member_id}}",
+            "column_header": null,
+            "section_text": null
+          },
+          "surface": null,
+          "frame_path": [],
+          "scope": null,
+          "constraints": {
+            "visible": true,
+            "enabled": true,
+            "unique": true
+          }
+        }
+      ],
+      "value": null,
+      "expected_page": {
+        "url_pattern": "*/member/search*",
+        "landmark_text": "Member Search Results"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "type": "url_contains",
+          "value": "/account"
+        }
+      ],
+      "checkpoint": null,
+      "timeout_ms": 15000,
+      "retry_safe": true,
+      "risk_tier": "read",
+      "expected_method": null,
+      "expected_route": null,
+      "output_key": null
+    },
+    {
+      "step_id": "step_05_extract_savings_balance",
+      "action": "extract",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "cell in 'Savings' row",
+          "role": "cell",
+          "anchor": {
+            "target_role": "cell",
+            "row_cell_text": "Savings",
+            "column_header": "Balance",
+            "section_text": null
+          },
+          "surface": null,
+          "frame_path": [
+            "account-frame"
+          ],
+          "scope": null,
+          "constraints": {
+            "visible": true,
+            "enabled": true,
+            "unique": true
+          }
+        }
+      ],
+      "value": null,
+      "expected_page": {
+        "url_pattern": "*/account*",
+        "landmark_text": "Account Details"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "type": "output_extracted",
+          "value": "savings_balance"
+        }
+      ],
+      "checkpoint": null,
+      "timeout_ms": 10000,
+      "retry_safe": true,
+      "risk_tier": "read",
+      "expected_method": null,
+      "expected_route": null,
+      "output_key": "savings_balance"
+    },
+    {
+      "step_id": "step_06_extract_checking_balance",
+      "action": "extract",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "cell in 'Checking' row",
+          "role": "cell",
+          "anchor": {
+            "target_role": "cell",
+            "row_cell_text": "Checking",
+            "column_header": "Balance",
+            "section_text": null
+          },
+          "surface": null,
+          "frame_path": [
+            "account-frame"
+          ],
+          "scope": null,
+          "constraints": {
+            "visible": true,
+            "enabled": true,
+            "unique": true
+          }
+        }
+      ],
+      "value": null,
+      "expected_page": {
+        "url_pattern": "*/account*",
+        "landmark_text": "Account Details"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "type": "output_extracted",
+          "value": "checking_balance"
+        }
+      ],
+      "checkpoint": null,
+      "timeout_ms": 10000,
+      "retry_safe": true,
+      "risk_tier": "read",
+      "expected_method": null,
+      "expected_route": null,
+      "output_key": "checking_balance"
+    }
+  ],
+  "outcome_detectors": [
+    {
+      "code": "SESSION_EXPIRED",
+      "detector_type": "page_contains_text",
+      "value": "Your session has expired",
+      "disposition": "HARD_FAILURE",
+      "priority": 2
+    },
+    {
+      "code": "APP_ERROR",
+      "detector_type": "page_contains_text",
+      "value": "An unexpected server error occurred",
+      "disposition": "HARD_FAILURE",
+      "priority": 3
+    },
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "detector_type": "page_contains_text",
+      "value": "No member found with ID",
+      "disposition": "BUSINESS_OUTCOME",
+      "priority": 10
+    },
+    {
+      "code": "ACCOUNT_FROZEN",
+      "detector_type": "page_contains_text",
+      "value": "Frozen",
+      "disposition": "BUSINESS_OUTCOME",
+      "priority": 10
+    }
+  ],
+  "lifecycle_status": "DRAFT",
+  "human_assisted": false,
+  "recorded_at": "2026-11-13T06:02:14.381662Z",
+  "recorded_by": "discovery-agent",
+  "base_capability": null,
+  "tenant_overrides": null
+}

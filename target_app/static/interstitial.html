@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><title>Authorization Required</title></head>
+<body>
+<form action="/supervisor/authorize" method="post">
+<table cellpadding="8" border="0" width="500">
+  <tr>
+    <td colspan="2"><font size="4"><b>Supervisor Authorization Required</b></font></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <font color="navy">
+        Access to this account requires supervisor authorization before proceeding.
+        Please enter your supervisor credentials to continue.
+      </font>
+    </td>
+  </tr>
+  <tr>
+    <td>Supervisor Code</td>
+    <td><input type="text" name="supervisor_code"></td>
+  </tr>
+  <tr>
+    <td>Authorization Reason</td>
+    <td><input type="text" name="auth_reason"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" value="Authorize Access"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><font size="2">Reference: Policy 7.4.2 — Elevated Access Control</font></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

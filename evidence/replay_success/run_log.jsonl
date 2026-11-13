@@ -1,0 +1,41 @@
+{"ts": "2026-11-13T06:02:14.604899+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "validation", "lifecycle": "DRAFT", "llm_calls": 0}
+{"ts": "2026-11-13T06:02:14.604943+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_01_navigate_login", "action": "navigate"}
+{"ts": "2026-11-13T06:02:14.605017+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_navigate", "step_id": "step_01_navigate_login", "url": "http://localhost:8080/login"}
+{"ts": "2026-11-13T06:02:15.157583+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_01_navigate_login", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:15.157640+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_01_navigate_login"}
+{"ts": "2026-11-13T06:02:15.157665+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_02_fill_username", "action": "fill"}
+{"ts": "2026-11-13T06:02:15.158617+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_02_fill_username", "field_ref": "step_02_fill_username"}
+{"ts": "2026-11-13T06:02:15.169972+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_02_fill_username"}
+{"ts": "2026-11-13T06:02:15.170016+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_03_fill_password", "action": "fill"}
+{"ts": "2026-11-13T06:02:15.170739+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_03_fill_password", "field_ref": "step_03_fill_password"}
+{"ts": "2026-11-13T06:02:15.200878+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_03_fill_password"}
+{"ts": "2026-11-13T06:02:15.200929+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_04_click_signin", "action": "click"}
+{"ts": "2026-11-13T06:02:15.202582+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_click", "step_id": "step_04_click_signin", "risk_tier": "mutating_expected"}
+{"ts": "2026-11-13T06:02:15.780162+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_04_click_signin", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:15.780295+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_04_click_signin"}
+{"ts": "2026-11-13T06:02:15.780350+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "run_complete", "status": "SUCCESS", "llm_calls": 0, "outputs": []}
+{"ts": "2026-11-13T06:02:15.780751+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "validation", "lifecycle": "DRAFT", "llm_calls": 0}
+{"ts": "2026-11-13T06:02:15.780791+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_01_navigate_dashboard", "action": "navigate"}
+{"ts": "2026-11-13T06:02:15.781033+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_navigate", "step_id": "step_01_navigate_dashboard", "url": "http://localhost:8080/dashboard"}
+{"ts": "2026-11-13T06:02:16.314219+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_01_navigate_dashboard", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:16.314309+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_01_navigate_dashboard"}
+{"ts": "2026-11-13T06:02:16.314363+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_02_fill_member_id", "action": "fill"}
+{"ts": "2026-11-13T06:02:16.315641+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_02_fill_member_id", "field_ref": "step_02_fill_member_id"}
+{"ts": "2026-11-13T06:02:16.325426+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_02_fill_member_id"}
+{"ts": "2026-11-13T06:02:16.325473+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_03_click_search", "action": "click"}
+{"ts": "2026-11-13T06:02:16.326333+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_click", "step_id": "step_03_click_search", "risk_tier": "mutating_expected"}
+{"ts": "2026-11-13T06:02:16.889766+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_03_click_search", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:16.889825+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_03_click_search"}
+{"ts": "2026-11-13T06:02:16.889855+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_04_click_view_account_member_id_row", "action": "click"}
+{"ts": "2026-11-13T06:02:16.906725+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_click", "step_id": "step_04_click_view_account_member_id_row", "risk_tier": "read"}
+{"ts": "2026-11-13T06:02:17.458117+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_04_click_view_account_member_id_row", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:17.458215+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_04_click_view_account_member_id_row"}
+{"ts": "2026-11-13T06:02:17.458262+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_05_extract_savings_balance", "action": "extract"}
+{"ts": "2026-11-13T06:02:17.489146+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_extract", "step_id": "step_05_extract_savings_balance", "output_key": "savings_balance", "value": "<savings_balance>"}
+{"ts": "2026-11-13T06:02:17.493112+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_05_extract_savings_balance", "cond_type": "output_extracted"}
+{"ts": "2026-11-13T06:02:17.493153+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_05_extract_savings_balance"}
+{"ts": "2026-11-13T06:02:17.493182+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_06_extract_checking_balance", "action": "extract"}
+{"ts": "2026-11-13T06:02:17.507369+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "action_extract", "step_id": "step_06_extract_checking_balance", "output_key": "checking_balance", "value": "<checking_balance>"}
+{"ts": "2026-11-13T06:02:17.509753+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_06_extract_checking_balance", "cond_type": "output_extracted"}
+{"ts": "2026-11-13T06:02:17.509784+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_06_extract_checking_balance"}
+{"ts": "2026-11-13T06:02:17.509803+00:00", "run_id": "replay-success", "capability_id": "member.lookup_balance", "event": "run_complete", "status": "SUCCESS", "llm_calls": 0, "outputs": ["savings_balance", "checking_balance"]}

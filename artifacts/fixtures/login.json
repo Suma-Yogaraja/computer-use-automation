@@ -1,0 +1,139 @@
+{
+  "id": "member.login",
+  "version": "1.0.0",
+  "name": "Member Services Login",
+  "description": "Navigate to the login page and authenticate, landing on the dashboard",
+  "target": "http://localhost:8080/login",
+  "compatibility": {
+    "vendor": "demo-bank",
+    "app_version": "1.0",
+    "surface": "web"
+  },
+  "parameters": [
+    {
+      "name": "username",
+      "type": "string",
+      "required": true,
+      "sensitivity": "secret"
+    },
+    {
+      "name": "password",
+      "type": "string",
+      "required": true,
+      "sensitivity": "secret"
+    }
+  ],
+  "outputs": [],
+  "outcome_detectors": [
+    {
+      "code": "SESSION_EXPIRED",
+      "detector_type": "page_contains_text",
+      "value": "Your session has expired",
+      "disposition": "HARD_FAILURE",
+      "priority": 2
+    },
+    {
+      "code": "APP_ERROR",
+      "detector_type": "page_contains_text",
+      "value": "An unexpected server error occurred",
+      "disposition": "HARD_FAILURE",
+      "priority": 3
+    }
+  ],
+  "lifecycle_status": "DRAFT",
+  "human_assisted": false,
+  "recorded_by": "hand-written",
+  "recorded_at": "2026-11-12T00:00:00+00:00",
+  "steps": [
+    {
+      "step_id": "step_01_navigate_login",
+      "action": "navigate",
+      "value": "http://localhost:8080/login",
+      "locators": [],
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "url_contains", "value": "/login" }
+      ],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_02_fill_username",
+      "action": "fill",
+      "value": "{{username}}",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "textbox in Username row",
+          "role": "textbox",
+          "anchor": {
+            "target_role": "textbox",
+            "row_cell_text": "Username"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/login*",
+        "landmark_text": "Member Services Portal"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_03_fill_password",
+      "action": "fill",
+      "value": "{{password}}",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "textbox in Password row",
+          "role": "textbox",
+          "anchor": {
+            "target_role": "textbox",
+            "row_cell_text": "Password"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/login*",
+        "landmark_text": "Member Services Portal"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_04_click_signin",
+      "action": "click",
+      "locators": [
+        {
+          "strategy": "aria_role_name",
+          "value": "Sign In",
+          "role": "button",
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/login*",
+        "landmark_text": "Member Services Portal"
+      },
+      "risk_tier": "mutating_expected",
+      "expected_method": "POST",
+      "expected_route": "/login",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "url_contains", "value": "/dashboard" }
+      ],
+      "timeout_ms": 15000,
+      "retry_safe": false
+    }
+  ]
+}

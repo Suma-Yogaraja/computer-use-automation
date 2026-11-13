@@ -1,0 +1,20 @@
+{"ts": "2026-11-13T06:02:19.873855+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "validation", "lifecycle": "DRAFT", "llm_calls": 0}
+{"ts": "2026-11-13T06:02:19.873900+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_01_navigate_login", "action": "navigate"}
+{"ts": "2026-11-13T06:02:19.873945+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "action_navigate", "step_id": "step_01_navigate_login", "url": "http://localhost:8080/login"}
+{"ts": "2026-11-13T06:02:20.414303+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_01_navigate_login", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:20.414377+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_01_navigate_login"}
+{"ts": "2026-11-13T06:02:20.414409+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_02_fill_username", "action": "fill"}
+{"ts": "2026-11-13T06:02:20.415577+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_02_fill_username", "field_ref": "step_02_fill_username"}
+{"ts": "2026-11-13T06:02:20.427640+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_02_fill_username"}
+{"ts": "2026-11-13T06:02:20.427680+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_03_fill_password", "action": "fill"}
+{"ts": "2026-11-13T06:02:20.428407+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_03_fill_password", "field_ref": "step_03_fill_password"}
+{"ts": "2026-11-13T06:02:20.449876+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_03_fill_password"}
+{"ts": "2026-11-13T06:02:20.449918+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_04_click_signin", "action": "click"}
+{"ts": "2026-11-13T06:02:20.450622+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "action_click", "step_id": "step_04_click_signin", "risk_tier": "mutating_expected"}
+{"ts": "2026-11-13T06:02:21.016939+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_04_click_signin", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:21.017004+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_04_click_signin"}
+{"ts": "2026-11-13T06:02:21.017033+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "run_complete", "status": "SUCCESS", "llm_calls": 0, "outputs": []}
+{"ts": "2026-11-13T06:02:21.017103+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "validation", "lifecycle": "DRAFT", "llm_calls": 0}
+{"ts": "2026-11-13T06:02:21.017127+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_01_navigate_dashboard", "action": "navigate"}
+{"ts": "2026-11-13T06:02:21.017195+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "policy_denied", "step_id": "step_01_navigate_dashboard", "reason": "Navigate target outside allowlist: http://evil-bank.com/steal"}
+{"ts": "2026-11-13T06:02:21.047081+00:00", "run_id": "policy-block", "capability_id": "member.lookup_balance", "event": "run_complete", "status": "FAILED", "failure_kind": "POLICY_DENIED"}

@@ -1,0 +1,301 @@
+{
+  "id": "member.lookup_balance",
+  "version": "1.0.0",
+  "name": "Member Balance Lookup",
+  "description": "Log in and look up savings and checking account balances for a member by ID",
+  "target": "http://localhost:8080/login",
+  "compatibility": {
+    "vendor": "demo-bank",
+    "app_version": "1.0",
+    "surface": "web"
+  },
+  "parameters": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "required": true,
+      "pattern": "^\\d{5}$",
+      "sensitivity": "internal"
+    },
+    {
+      "name": "username",
+      "type": "string",
+      "required": true,
+      "sensitivity": "secret"
+    },
+    {
+      "name": "password",
+      "type": "string",
+      "required": true,
+      "sensitivity": "secret"
+    }
+  ],
+  "outputs": [
+    { "name": "savings_balance",  "type": "string", "sensitivity": "financial_data" },
+    { "name": "checking_balance", "type": "string", "sensitivity": "financial_data" }
+  ],
+  "outcome_detectors": [
+    {
+      "code": "SESSION_EXPIRED",
+      "detector_type": "page_contains_text",
+      "value": "Your session has expired",
+      "disposition": "HARD_FAILURE",
+      "priority": 2
+    },
+    {
+      "code": "APP_ERROR",
+      "detector_type": "page_contains_text",
+      "value": "An unexpected server error occurred",
+      "disposition": "HARD_FAILURE",
+      "priority": 3
+    },
+    {
+      "code": "MEMBER_NOT_FOUND",
+      "detector_type": "page_contains_text",
+      "value": "No member found with ID",
+      "disposition": "BUSINESS_OUTCOME",
+      "priority": 10
+    },
+    {
+      "code": "ACCOUNT_FROZEN",
+      "detector_type": "page_contains_text",
+      "value": "Frozen",
+      "disposition": "BUSINESS_OUTCOME",
+      "priority": 10
+    }
+  ],
+  "lifecycle_status": "DRAFT",
+  "human_assisted": false,
+  "recorded_by": "hand-written",
+  "recorded_at": "2026-11-12T00:00:00+00:00",
+  "steps": [
+    {
+      "step_id": "step_01_navigate_login",
+      "action": "navigate",
+      "value": "http://localhost:8080/login",
+      "locators": [],
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "url_contains", "value": "/login" }
+      ],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_02_fill_username",
+      "action": "fill",
+      "value": "{{username}}",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "textbox in Username row",
+          "role": "textbox",
+          "anchor": {
+            "target_role": "textbox",
+            "row_cell_text": "Username"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/login*",
+        "landmark_text": "Member Services Portal"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_03_fill_password",
+      "action": "fill",
+      "value": "{{password}}",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "textbox in Password row",
+          "role": "textbox",
+          "anchor": {
+            "target_role": "textbox",
+            "row_cell_text": "Password"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/login*",
+        "landmark_text": "Member Services Portal"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_04_click_signin",
+      "action": "click",
+      "locators": [
+        {
+          "strategy": "aria_role_name",
+          "value": "Sign In",
+          "role": "button",
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/login*",
+        "landmark_text": "Member Services Portal"
+      },
+      "risk_tier": "mutating_expected",
+      "expected_method": "POST",
+      "expected_route": "/login",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "url_contains", "value": "/dashboard" }
+      ],
+      "timeout_ms": 15000,
+      "retry_safe": false
+    },
+    {
+      "step_id": "step_05_fill_member_id",
+      "action": "fill",
+      "value": "{{member_id}}",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "textbox in Member ID row",
+          "role": "textbox",
+          "anchor": {
+            "target_role": "textbox",
+            "row_cell_text": "Member ID:"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/dashboard*",
+        "landmark_text": "Member Search"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_06_click_search",
+      "action": "click",
+      "locators": [
+        {
+          "strategy": "aria_role_name",
+          "value": "Search",
+          "role": "button",
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/dashboard*",
+        "landmark_text": "Member Search"
+      },
+      "risk_tier": "mutating_expected",
+      "expected_method": "POST",
+      "expected_route": "/member/search",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "url_contains", "value": "/member/search" }
+      ],
+      "timeout_ms": 15000,
+      "retry_safe": false
+    },
+    {
+      "step_id": "step_07_click_view_account",
+      "action": "click",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "link in row for member_id",
+          "role": "link",
+          "anchor": {
+            "target_role": "link",
+            "row_cell_text": "{{member_id}}"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/member/search*",
+        "landmark_text": "Member Search Results"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "url_contains", "value": "/account" }
+      ],
+      "timeout_ms": 15000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_08_extract_savings",
+      "action": "extract",
+      "output_key": "savings_balance",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "Savings balance cell",
+          "role": "cell",
+          "frame_path": ["account-frame"],
+          "anchor": {
+            "target_role": "cell",
+            "row_cell_text": "Savings",
+            "column_header": "Balance"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/account*",
+        "landmark_text": "Account Details"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "output_extracted", "value": "savings_balance" }
+      ],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    },
+    {
+      "step_id": "step_09_extract_checking",
+      "action": "extract",
+      "output_key": "checking_balance",
+      "locators": [
+        {
+          "strategy": "anchor_relative",
+          "value": "Checking balance cell",
+          "role": "cell",
+          "frame_path": ["account-frame"],
+          "anchor": {
+            "target_role": "cell",
+            "row_cell_text": "Checking",
+            "column_header": "Balance"
+          },
+          "constraints": { "visible": true, "enabled": true, "unique": true }
+        }
+      ],
+      "expected_page": {
+        "url_pattern": "*/account*",
+        "landmark_text": "Account Details"
+      },
+      "risk_tier": "read",
+      "preconditions": [],
+      "postconditions": [
+        { "type": "output_extracted", "value": "checking_balance" }
+      ],
+      "timeout_ms": 10000,
+      "retry_safe": true
+    }
+  ]
+}

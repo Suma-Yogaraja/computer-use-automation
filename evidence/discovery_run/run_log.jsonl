@@ -1,0 +1,31 @@
+{"ts": "2026-11-13T06:01:30.802034+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "validation", "lifecycle": "DRAFT", "llm_calls": 0}
+{"ts": "2026-11-13T06:01:30.802079+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_01_navigate_login", "action": "navigate"}
+{"ts": "2026-11-13T06:01:30.802270+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "action_navigate", "step_id": "step_01_navigate_login", "url": "http://localhost:8080/login"}
+{"ts": "2026-11-13T06:01:31.414913+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_01_navigate_login", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:01:31.414972+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_01_navigate_login"}
+{"ts": "2026-11-13T06:01:31.414996+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_02_fill_username", "action": "fill"}
+{"ts": "2026-11-13T06:01:31.416496+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_02_fill_username", "field_ref": "step_02_fill_username"}
+{"ts": "2026-11-13T06:01:31.473919+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_02_fill_username"}
+{"ts": "2026-11-13T06:01:31.474018+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_03_fill_password", "action": "fill"}
+{"ts": "2026-11-13T06:01:31.476255+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_03_fill_password", "field_ref": "step_03_fill_password"}
+{"ts": "2026-11-13T06:01:31.502794+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_03_fill_password"}
+{"ts": "2026-11-13T06:01:31.502842+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_04_click_signin", "action": "click"}
+{"ts": "2026-11-13T06:01:31.503644+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "action_click", "step_id": "step_04_click_signin", "risk_tier": "mutating_expected"}
+{"ts": "2026-11-13T06:01:32.079415+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_04_click_signin", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:01:32.079506+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_04_click_signin"}
+{"ts": "2026-11-13T06:01:32.079539+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "run_complete", "status": "SUCCESS", "llm_calls": 0, "outputs": []}
+{"ts": "2026-11-13T06:01:32.696886+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "discovery"}
+{"ts": "2026-11-13T06:01:41.440959+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "llm_call", "step_num": 1, "action": "fill"}
+{"ts": "2026-11-13T06:01:41.485798+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_failed", "action": "fill", "error": "Locator resolved to 0 elements [label_association 'Member ID:']"}
+{"ts": "2026-11-13T06:01:47.014515+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "llm_call", "step_num": 2, "action": "fill"}
+{"ts": "2026-11-13T06:01:47.111753+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_02_fill_member_id", "action": "fill"}
+{"ts": "2026-11-13T06:01:49.686669+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "llm_call", "step_num": 3, "action": "click"}
+{"ts": "2026-11-13T06:01:50.348166+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_03_click_search", "action": "click"}
+{"ts": "2026-11-13T06:01:52.783527+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "llm_call", "step_num": 4, "action": "click"}
+{"ts": "2026-11-13T06:01:53.467207+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_04_click_view_account_member_id_row", "action": "click"}
+{"ts": "2026-11-13T06:01:56.272347+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "llm_call", "step_num": 5, "action": "extract"}
+{"ts": "2026-11-13T06:01:56.347551+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_05_extract_savings_balance", "action": "extract"}
+{"ts": "2026-11-13T06:02:04.142213+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "llm_call", "step_num": 6, "action": "extract"}
+{"ts": "2026-11-13T06:02:04.264232+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_06_extract_checking_balance", "action": "extract"}
+{"ts": "2026-11-13T06:02:14.381049+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "llm_call", "step_num": 7, "action": "goal_complete"}
+{"ts": "2026-11-13T06:02:14.389041+00:00", "run_id": "discovery-evidence", "capability_id": "member.lookup_balance", "event": "run_complete", "status": "SUCCESS", "llm_calls": 7, "steps": 6}

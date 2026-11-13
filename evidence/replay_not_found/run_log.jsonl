@@ -1,0 +1,27 @@
+{"ts": "2026-11-13T06:02:17.548633+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "validation", "lifecycle": "DRAFT", "llm_calls": 0}
+{"ts": "2026-11-13T06:02:17.548679+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_01_navigate_login", "action": "navigate"}
+{"ts": "2026-11-13T06:02:17.548721+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "action_navigate", "step_id": "step_01_navigate_login", "url": "http://localhost:8080/login"}
+{"ts": "2026-11-13T06:02:18.086563+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_01_navigate_login", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:18.086641+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_01_navigate_login"}
+{"ts": "2026-11-13T06:02:18.086675+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_02_fill_username", "action": "fill"}
+{"ts": "2026-11-13T06:02:18.087881+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_02_fill_username", "field_ref": "step_02_fill_username"}
+{"ts": "2026-11-13T06:02:18.102033+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_02_fill_username"}
+{"ts": "2026-11-13T06:02:18.102080+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_03_fill_password", "action": "fill"}
+{"ts": "2026-11-13T06:02:18.102976+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_03_fill_password", "field_ref": "step_03_fill_password"}
+{"ts": "2026-11-13T06:02:18.122494+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_03_fill_password"}
+{"ts": "2026-11-13T06:02:18.122548+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_04_click_signin", "action": "click"}
+{"ts": "2026-11-13T06:02:18.123411+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "action_click", "step_id": "step_04_click_signin", "risk_tier": "mutating_expected"}
+{"ts": "2026-11-13T06:02:18.691178+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_04_click_signin", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:18.691262+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_04_click_signin"}
+{"ts": "2026-11-13T06:02:18.691297+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "run_complete", "status": "SUCCESS", "llm_calls": 0, "outputs": []}
+{"ts": "2026-11-13T06:02:18.691383+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "run_start", "mode": "validation", "lifecycle": "DRAFT", "llm_calls": 0}
+{"ts": "2026-11-13T06:02:18.691413+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_01_navigate_dashboard", "action": "navigate"}
+{"ts": "2026-11-13T06:02:18.691485+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "action_navigate", "step_id": "step_01_navigate_dashboard", "url": "http://localhost:8080/dashboard"}
+{"ts": "2026-11-13T06:02:19.222419+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "checkpoint_pass", "step_id": "step_01_navigate_dashboard", "cond_type": "url_contains"}
+{"ts": "2026-11-13T06:02:19.222513+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_01_navigate_dashboard"}
+{"ts": "2026-11-13T06:02:19.222570+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_02_fill_member_id", "action": "fill"}
+{"ts": "2026-11-13T06:02:19.224095+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "action_fill", "step_id": "step_02_fill_member_id", "field_ref": "step_02_fill_member_id"}
+{"ts": "2026-11-13T06:02:19.238338+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_complete", "step_id": "step_02_fill_member_id"}
+{"ts": "2026-11-13T06:02:19.238394+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "step_start", "step_id": "step_03_click_search", "action": "click"}
+{"ts": "2026-11-13T06:02:19.239233+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "action_click", "step_id": "step_03_click_search", "risk_tier": "mutating_expected"}
+{"ts": "2026-11-13T06:02:19.809508+00:00", "run_id": "replay-not-found", "capability_id": "member.lookup_balance", "event": "outcome_detected", "step_id": "step_03_click_search", "code": "MEMBER_NOT_FOUND", "disposition": "BUSINESS_OUTCOME"}
